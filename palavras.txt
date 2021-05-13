@@ -1,0 +1,11 @@
+macaco
+bola
+casa
+casaco
+borboleta
+cachorro
+casa
+predio
+telefone
+celular
+computador
