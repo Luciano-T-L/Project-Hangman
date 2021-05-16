@@ -109,3 +109,5 @@ while len(letras_erradas) < 6 and len(letras_palavras) > 0:
         print("Palavra:", ' '.join(letras_palavra))
         
         #Doing some test
+
+# Doing a test
