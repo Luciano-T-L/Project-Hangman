@@ -108,3 +108,4 @@ while len(letras_erradas) < 6 and len(letras_palavras) > 0:
         letras_palavra = [letter if letter in letras_certas else '_' for letter in palavra]
         print("Palavra:", ' '.join(letras_palavra))
         
+        #Doing some test
