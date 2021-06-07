@@ -64,20 +64,27 @@ O   |
 
 #import
 import random
-palavra = (random.choice(open("palavras.txt").read().split('\n')))
+import os
+
+# Function to clear the command line after a game
+def clear():
+    os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
 # Variables
+palavra = (random.choice(open("palavras.txt").read().split('\n')))
 letras_palavras = set(palavra)
 letras_erradas = []
 letras_certas = set()
 letras_digitadas = set()
 
-
+print("-------------Welcome to the Hangman game-------------")
+print(board[len(letras_erradas)])
 print(f"A palavra tem {len(palavra)} letras")
 
 # Loop que termina com 6 erros ou palavra certa!
 while len(letras_erradas) < 6 and len(letras_palavras) > 0:
     letra = input("Escolha uma letra: ").lower()  # guardar letra digitada temporariamente
+    clear()
 
     if letra in letras_digitadas:
         print("Você já digitou essa letra, tente outra!")
@@ -87,6 +94,7 @@ while len(letras_erradas) < 6 and len(letras_palavras) > 0:
         if letra in palavra:
             letras_certas.add(letra)  # Se acertou a letra, printa
             print("Acertou")
+            print(board[len(letras_erradas)])
 
     #retirar a letra certa do set "letras_palavras" para quando o
     #jogador ganhar, existir a condição (len(letras_palavras) > 0
@@ -107,7 +115,3 @@ while len(letras_erradas) < 6 and len(letras_palavras) > 0:
 
         letras_palavra = [letter if letter in letras_certas else '_' for letter in palavra]
         print("Palavra:", ' '.join(letras_palavra))
-        
-        #Doing some test
-
-# Doing a test
